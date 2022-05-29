@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        #head{
+            color: white;
+            background-color: black;
+            padding: 1rem;
+            padding-left: 6rem;
+            margin: 0rem;
+            margin-right: 64rem;
+            margin-block: 2rem;
+            border-radius: 2rem;
+            
+        }
+
+        #title{
+            color: aliceblue;
+            background-color: black;
+            padding: 23rem;
+            padding-left: 2rem;
+            margin: 2rem;
+            margin-right: 80rem;
+            margin-block: 2rem;
+            border-radius: 3rem;
+            
+        
+            
+        
+        }
+    </style>
+</head>
+<body>
+
+    <div id="head">
+        <h1>K's Calculator</h1>
+    </div>
+    <div id="title">
+
+    <table border="5" style="padding:1rem">
+        <tr>
+            <td colspan="3"><input type="text" id="result"/></td>
+            <td style="padding: 1rem"><input type="button" value="C" onclick="clr()"/></td>
+        </tr>
+    
+        <tr>
+            <td style="padding: 1rem"><input type="button" value="1" onclick="display('1')"/></td>
+            <td style="padding: 1rem"><input type="button" value="2" onclick="display('2')"/></td>
+            <td style="padding: 1rem"><input type="button" value="3" onclick="display('3')"/></td>
+            <td style="padding: 1rem"><input type="button" value="/" onclick="display('/')"/></td>
+        </tr>
+        
+        <tr>
+            <td style="padding: 1rem"><input type="button" value="4" onclick="display('4')"/></td>
+            <td style="padding: 1rem"><input type="button" value="5" onclick="display('5')"/></td>
+            <td style="padding: 1rem"><input type="button" value="6" onclick="display('6')"/></td>
+            <td style="padding: 1rem"><input type="button" value="*" onclick="display('*')"/></td>
+        </tr>
+        
+        <tr>
+            <td style="padding: 1rem"><input type="button" value="7" onclick="display('7')"/></td>
+            <td style="padding: 1rem"><input type="button" value="8" onclick="display('8')"/></td>
+            <td style="padding: 1rem"><input type="button" value="9" onclick="display('9')"/></td>
+            <td style="padding: 1rem"><input type="button" value="-" onclick="display('-')"/></td>
+        </tr>
+        
+        <tr>
+            <td style="padding: 1rem"><input type="button" value="0" onclick="display('0')"/></td>
+            <td style="padding: 1rem"><input type="button" value="." onclick="display('.')"/></td>
+            <td style="padding: 1rem"><input type="button" value="=" onclick="equate('')"/></td>
+            <td style="padding: 1rem"><input type="button" value="+" onclick="display('+')"/></td>
+        </tr>
+    </table>
+    </div>
+
+    <script type="text/javascript">
+        function clr(){
+            document.getElementById("result").value = "";
+        }
+
+        function display(val){
+            document.getElementById("result").value+=val;
+
+        }
+
+        function equate(){
+            let x = document.getElementById("result").value;
+            let y = eval(x);
+            document.getElementById("result").value = y;
+
+        }
+    </script>
+
+</body>
+</html>
